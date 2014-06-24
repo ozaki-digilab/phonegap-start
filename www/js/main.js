@@ -1,8 +1,14 @@
 enchant();
 
-function callinit() {alert("callinit start");
-    if(getUa() === false || typeof device !== 'undefined') init();
-    else document.addEventListener("deviceready", init, false);
+function callinit() {
+    if(getUa() === false || typeof device !== 'undefined') {
+      alert(getUa());
+      init();
+    }
+    else {
+      alert("deviceready start");
+      document.addEventListener("deviceready", init, false);
+    }
 }
 
 var SETTINGS_GRAVITY = 0.18,
