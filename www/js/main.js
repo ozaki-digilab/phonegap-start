@@ -1,7 +1,7 @@
 enchant();
 
 function callinit() {alert("callinit start");
-    if(getUa() === false) init();
+    if(getUa() === false || typeof device !== 'undefined') init();
     else document.addEventListener("deviceready", init, false);
 }
 
