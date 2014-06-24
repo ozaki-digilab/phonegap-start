@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/main.js"></script> 
     <script type="text/javascript">
     	alert("START!!");
+    	console.log("START!!");
         if (navigator.userAgent.indexOf('iPad') > 0) {
             var initialScale = Math.round(window.screen.width * 10 / 320) / 10;
             document.write('<meta name="viewport" content="width=320,maximum-scale=' + initialScale + ',minimum-scale=' + initialScale + ',user-scalable=no" />');
@@ -17,6 +18,8 @@
 			var scale = screen.width / 320 * 100 + "%";
 			rootElement.style.zoom = scale;
         }
+    	console.log("END!!");
+    	alert("END!!");
     </script>
 </head>
 <body>
