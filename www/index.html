@@ -10,10 +10,13 @@
     <script type="text/javascript">
     	alert("START!!");
     	console.log("START!!");
+    	alert("START!!");
         if (navigator.userAgent.indexOf('iPad') > 0) {
+    	alert("START!!");
             var initialScale = Math.round(window.screen.width * 10 / 320) / 10;
             document.write('<meta name="viewport" content="width=320,maximum-scale=' + initialScale + ',minimum-scale=' + initialScale + ',user-scalable=no" />');
         } else {
+    	alert("START!!");
 			var rootElement = document.documentElement;
 			var scale = screen.width / 320 * 100 + "%";
 			rootElement.style.zoom = scale;
