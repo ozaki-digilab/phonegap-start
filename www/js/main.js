@@ -339,7 +339,7 @@ function vibrate() {
     if(typeof(navigator.notification) !== 'undefined') navigator.notification.vibrate(500);
 }
 
-function getUa() {
+function getUa() {alert(navigator.userAgent);
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 ) {
         return 'iPhone'; 
     } else if(navigator.userAgent.indexOf('iPad') > 0) {
