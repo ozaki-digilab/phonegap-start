@@ -7,7 +7,7 @@ function callinit() {
     }
     else {
       alert("deviceready start");
-      document.addEventListener("deviceready", init, false);
+      $(document).ready(init);
     }
 }
 
