@@ -1,6 +1,6 @@
 enchant();
 
-function callinit() {
+function callinit() {alert("callinit start");
     if(getUa() === false) init();
     else document.addEventListener("deviceready", init, false);
 }
@@ -167,7 +167,7 @@ function reset() {
     game.resume();
 }
 
-function init() {    console.log("init() START");
+function init() {    alert("init() START");
     game = new Monacanoid();
     game.fps = SETTINGS_FPS;
     game.rootScene.backgroundColor = 'black';
