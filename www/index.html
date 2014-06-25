@@ -3,19 +3,23 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Monacanoid</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/enchant.min.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script> 
     <script type="text/javascript">
     	alert("START!!");
     	console.log("START!!");
-    	document.addEventListener("deviceready", function(){alert("aaa");});
-//        if (navigator.userAgent.indexOf('iPad') > 0) {
-//            var initialScale = Math.round(window.screen.width * 10 / 320) / 10;
-//            document.write('<meta name="viewport" content="width=320,maximum-scale=' + initialScale + ',minimum-scale=' + initialScale + ',user-scalable=no" />');
-//        } else {
-//			var rootElement = document.documentElement;
-//			var scale = screen.width / 320 * 100 + "%";
-//			rootElement.style.zoom = scale;
-//        }
+    	document.addEventListener("deviceready", callinit, false);
+        if (navigator.userAgent.indexOf('iPad') > 0) {
+            var initialScale = Math.round(window.screen.width * 10 / 320) / 10;
+            document.write('<meta name="viewport" content="width=320,maximum-scale=' + initialScale + ',minimum-scale=' + initialScale + ',user-scalable=no" />');
+        } else {
+			var rootElement = document.documentElement;
+			var scale = screen.width / 320 * 100 + "%";
+			rootElement.style.zoom = scale;
+        }
     	console.log("END!!");
     	alert("END!!");
     </script>
