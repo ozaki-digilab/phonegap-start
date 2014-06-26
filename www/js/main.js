@@ -2,12 +2,10 @@ enchant();
 
 function callinit() {
     if(getUa() === false || typeof device !== 'undefined') {
-      alert(getUa());
       init();
     }
     else {
-      alert("deviceready start");
-      $(document).ready(init);
+		document.addEventListener("deviceready", init, false);
     }
 }
 
@@ -53,14 +51,14 @@ Monacanoid = Class.create(Core,{
         };
     
         // Set screen size
-        if (getUa() == 'iPhone') {
-            this.screenSize.height = window.screen.height - 108; 
-        } else if(getUa() == 'iPad') {
-            this.screenSize.height = 382;
-        } else if(getUa() == 'Android') {
-            this.screenSize.zoom = screen.availWidth / this.screenSize.width;
-            this.screenSize.height = screen.availHeight ? ~~((screen.availHeight - 76*4) / this.screenSize.zoom) : 420;
-        } else this.screenSize.height = 480;
+//        if (getUa() == 'iPhone') {
+//            this.screenSize.height = window.screen.height - 108; 
+//        } else if(getUa() == 'iPad') {
+//            this.screenSize.height = 382;
+//        } else if(getUa() == 'Android') {
+//            this.screenSize.zoom = screen.availWidth / this.screenSize.width;
+//            this.screenSize.height = screen.availHeight ? ~~((screen.availHeight - 76*4) / this.screenSize.zoom) : 420;console.log(screen.availHeight);
+//        } else this.screenSize.height = 480;
 
         // Accelerometer
         if (typeof(navigator.accelerometer) !== 'undefined') {
@@ -173,7 +171,7 @@ function reset() {
     game.resume();
 }
 
-function init() {    alert("init() START");
+function init() {
     game = new Monacanoid();
     game.fps = SETTINGS_FPS;
     game.rootScene.backgroundColor = 'black';
@@ -345,7 +343,7 @@ function vibrate() {
     if(typeof(navigator.notification) !== 'undefined') navigator.notification.vibrate(500);
 }
 
-function getUa() {alert(navigator.userAgent);
+function getUa() {
     if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 ) {
         return 'iPhone'; 
     } else if(navigator.userAgent.indexOf('iPad') > 0) {
