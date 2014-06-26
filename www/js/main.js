@@ -51,14 +51,14 @@ Monacanoid = Class.create(Core,{
         };
     
         // Set screen size
-//        if (getUa() == 'iPhone') {
-//            this.screenSize.height = window.screen.height - 108; 
-//        } else if(getUa() == 'iPad') {
-//            this.screenSize.height = 382;
-//        } else if(getUa() == 'Android') {
-//            this.screenSize.zoom = screen.availWidth / this.screenSize.width;
-//            this.screenSize.height = screen.availHeight ? ~~((screen.availHeight - 76*4) / this.screenSize.zoom) : 420;console.log(screen.availHeight);
-//        } else this.screenSize.height = 480;
+        if (getUa() == 'iPhone') {
+            this.screenSize.height = window.screen.height - 108; 
+        } else if(getUa() == 'iPad') {
+            this.screenSize.height = 382;
+        } else if(getUa() == 'Android') {
+            this.screenSize.zoom = screen.availWidth / this.screenSize.width;
+            this.screenSize.height = screen.availHeight ? ~~((screen.availHeight - 76*4) / this.screenSize.zoom) : 420;alert(screen.availHeight);
+        } else this.screenSize.height = 480;
 
         // Accelerometer
         if (typeof(navigator.accelerometer) !== 'undefined') {
