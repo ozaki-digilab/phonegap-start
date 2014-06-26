@@ -32,12 +32,18 @@ var app = {
 	onDeviceReady: function() {
 		navigator.compass.watchHeading(app.successFunc, app.errorFunc,
 		{
-			frequency: 1000
+			frequency: 100
 		});
 	},
 	// コンパスの取得に成功した場合の処理
 	successFunc: function(heading){
-		$("#stat").html(heading.magneticHeading);
+		var deg = (heading.magneticHeading ? heading.magneticHeading : heading);
+		console.log(deg);
+		$("#stat").html(deg);
+		$("#app").css("transform", "rotate("+deg+"deg)");
+		$("#app").css("-ms-transform", "rotate("+deg+"deg)");
+		$("#app").css("-moz-transform", "rotate("+deg+"deg)");
+		$("#app").css("-webkit-transform", "rotate("+deg+"deg)");
 	},
 	// エラーの場合
 	errorFunc: function(){
