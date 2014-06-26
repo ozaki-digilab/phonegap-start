@@ -30,14 +30,13 @@ var app = {
 	// The scope of 'this' is the event. In order to call the 'receivedEvent'
 	// function, we must explicity call 'app.receivedEvent(...);'
 	onDeviceReady: function() {
-		navigator.compass.watchHeading(this.successFunc, this.errorFunc,
+		navigator.compass.watchHeading(app.successFunc, app.errorFunc,
 		{
 			frequency: 100
 		})
 	},
 	// コンパスの取得に成功した場合の処理
 	successFunc: function(heading){
-		alert(heading);
 		$("#stat").html(heading);
 	},
 	// エラーの場合
