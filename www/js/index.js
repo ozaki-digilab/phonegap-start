@@ -40,10 +40,10 @@ var app = {
 		var deg = (heading.magneticHeading ? heading.magneticHeading : heading);
 		console.log(deg);
 		$("#stat").html(deg);
-		$("#app").css("transform", "rotate("+deg+"deg)");
-		$("#app").css("-ms-transform", "rotate("+deg+"deg)");
-		$("#app").css("-moz-transform", "rotate("+deg+"deg)");
-		$("#app").css("-webkit-transform", "rotate("+deg+"deg)");
+		$("#app").css("transform", "rotate("+deg/2+"deg)");
+		$("#app").css("-ms-transform", "rotate("+deg/2+"deg)");
+		$("#app").css("-moz-transform", "rotate("+deg/2+"deg)");
+		$("#app").css("-webkit-transform", "rotate("+deg/2+"deg)");
 	},
 	// エラーの場合
 	errorFunc: function(){
