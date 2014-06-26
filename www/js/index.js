@@ -32,11 +32,12 @@ var app = {
 	onDeviceReady: function() {
 		navigator.compass.watchHeading(app.successFunc, app.errorFunc,
 		{
-			frequency: 100
+			frequency: 1000
 		});
 	},
 	// コンパスの取得に成功した場合の処理
 	successFunc: function(heading){
+		alert(heading);
 		$("#stat").html(heading);
 	},
 	// エラーの場合
