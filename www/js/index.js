@@ -37,6 +37,7 @@ var app = {
 	},
 	// コンパスの取得に成功した場合の処理
 	successFunc: function(heading){
+		alert(heading);
 		$("#stat").html(heading);
 	},
 	// エラーの場合
