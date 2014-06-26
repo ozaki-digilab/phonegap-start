@@ -33,7 +33,7 @@ var app = {
 		navigator.compass.watchHeading(app.successFunc, app.errorFunc,
 		{
 			frequency: 100
-		})
+		});
 	},
 	// コンパスの取得に成功した場合の処理
 	successFunc: function(heading){
@@ -42,6 +42,5 @@ var app = {
 	// エラーの場合
 	errorFunc: function(){
 		$("#stat").html("エラー");
-	},
-	
+	}
 };
